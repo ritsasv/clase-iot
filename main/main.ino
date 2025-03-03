@@ -152,12 +152,21 @@ void manejarClienteWeb() {
           client.println("HTTP/1.1 200 OK");
           client.println("Content-type:text/html");
           client.println();
-          client.println("<html><head><meta charset='UTF-8'><title>Registro</title></head><body>");
+          client.println("<html><head><meta charset='UTF-8'><title>Registro</title>");
+          client.println("<style>");
+          client.println("body { background-color: #0A192F; color: white; font-family: Arial, sans-serif; margin: 0; padding: 20px; }");
+          client.println("h1 { color: #64FFDA; text-align: center; }");
+          client.println("p { font-size: 18px; text-align: center; }");
+          client.println(".container { max-width: 600px; margin: auto; padding: 20px; background-color: #112240; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }");
+          client.println("</style></head><body>");
+          client.println("<div class='container'>");
           client.println("<h1>Registro de Huellas</h1>");
-          client.println("<p><b>Ultimo ingreso:</b></p>");
+          client.println("<p><b>Último ingreso:</b></p>");
           client.println("<p>Nombre: " + ultimoNombre + "</p>");
           client.println("<p>Hora: " + ultimaHora + "</p>");
+          client.println("</div>");
           client.println("</body></html>");
+
           break;
         }
       }
