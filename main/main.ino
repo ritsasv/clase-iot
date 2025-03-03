@@ -152,21 +152,49 @@ void manejarClienteWeb() {
           client.println("HTTP/1.1 200 OK");
           client.println("Content-type:text/html");
           client.println();
+
+          // Inicia HTML
           client.println("<html><head><meta charset='UTF-8'><title>Registro</title>");
           client.println("<style>");
-          client.println("body { background-color: #0A192F; color: white; font-family: Arial, sans-serif; margin: 0; padding: 20px; }");
+          client.println("body {");
+          client.println("  background-color: #0A192F;");
+          client.println("  color: white;");
+          client.println("  font-family: Arial, sans-serif;");
+          client.println("  margin: 0; padding: 20px;");
+          client.println("}");
           client.println("h1 { color: #64FFDA; text-align: center; }");
-          client.println("p { font-size: 18px; text-align: center; }");
-          client.println(".container { max-width: 600px; margin: auto; padding: 20px; background-color: #112240; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }");
+          client.println("h2 { color: white; text-align: center; }");
+          client.println("p  { font-size: 18px; text-align: center; }");
+          client.println(".container {");
+          client.println("  max-width: 600px;");
+          client.println("  margin: auto;");
+          client.println("  padding: 20px;");
+          client.println("  background-color: #112240;");
+          client.println("  border-radius: 10px;");
+          client.println("  box-shadow: 0 4px 8px rgba(0,0,0,0.2);");
+          client.println("}");
           client.println("</style></head><body>");
+
+          // Contenedor principal
           client.println("<div class='container'>");
           client.println("<h1>Registro de Huellas</h1>");
+          client.println("<h2>Por Ritsa electronica</h2>");
+
+          // Imagen centrada
+          client.println("<center>");
+          client.println("<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVUjaAN_R3D8P1Kn_VZu_sJmFZfoVFWXmQVQ&s' />");
+          client.println("</center>");
+
+          // Bloque con borde
+          client.println("<div style='border: solid black 10px;'>");
           client.println("<p><b>Último ingreso:</b></p>");
           client.println("<p>Nombre: " + ultimoNombre + "</p>");
           client.println("<p>Hora: " + ultimaHora + "</p>");
           client.println("</div>");
-          client.println("</body></html>");
 
+          client.println("</div>"); // fin .container
+          client.println("</body></html>");
+          client.println();
           break;
         }
       }
