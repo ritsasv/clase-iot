@@ -195,7 +195,10 @@ void manejarClienteWeb() {
             delay(3000);
             mostrarDescanso();
           }
-
+          String ultimaHorastr = "";
+          if(ultimaHora != ""){
+            ultimaHorastr = String(ultimaHora).replace('%3A',''); 
+          }
           client.println("HTTP/1.1 200 OK");
           client.println("Content-type:text/html");
           client.println();
@@ -203,7 +206,7 @@ void manejarClienteWeb() {
           client.println("<h1>Control de Huellas</h1>");
           client.println("<p><b>Último ingreso:</b></p>");
           client.println("<p>Nombre: " + ultimoNombre + "</p>");
-          client.println("<p>Hora: " + String(ultimaHora).replace('%3A','') + "</p>");
+          client.println("<p>Hora: " + ultimaHorastr + "</p>");
           client.println("<h2>Registrar nueva huella</h2>");
           client.println("<form action='/registrar' method='GET'>ID (1-10): <input type='number' name='id'><input type='submit' value='Registrar'></form>");
           client.println("<h2>Asignar nombre</h2>");
