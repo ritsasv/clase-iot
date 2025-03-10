@@ -1,0 +1,12 @@
+<html><head><meta charset='UTF-8'><title>Registro</title></head><body>
+<h1>Control de Huellas</h1>
+<p><b>Último ingreso:</b></p>
+<p>Nombre: " + ultimoNombre + "</p>
+<p>Hora: " + ultimaHora + "</p>
+<h2>Registrar nueva huella</h2>
+<form action='/registrar' method='GET'>ID (1-10): <input type='number' name='id'><input type='submit' value='Registrar'></form>
+<h2>Asignar nombre</h2>
+<form action='/nombre' method='GET'>ID: <input type='number' name='id'> Nombre: <input type='text' name='nombre'><input type='submit' value='Guardar'></form>
+<h2>Configurar Hora y Fecha</h2>
+<form action='/settime' method='GET'>Hora (HH:MM:SS): <input type='text' name='hora'> Fecha (DD/MM/YYYY): <input type='text' name='fecha'><input type='submit' value='Actualizar'></form>
+</body></html>
